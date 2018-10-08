@@ -2,6 +2,7 @@
 var func = require('./lib/func');
 var performance = require('./lib/performance');
 var testUtil = require('./lib/testUtil');
+var factory = require('./lib/logger').loggerFactory;
 var c;
 var pub = {
     // init : function (app) {
@@ -44,6 +45,11 @@ var pub = {
     },
     util : {
         buildGetParam : testUtil.buildGetParam//传入json格式的参数，构建成标准get请求参数
+    },
+    loggerFactory : {
+        initLogger : factory.initLogger,//
+        getLogger : factory.getLogger,//
+        getLoggerByName : factory.getLoggerByName//
     }
 };
 
